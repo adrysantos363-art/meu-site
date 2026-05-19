@@ -9,6 +9,81 @@
   <title>RetecTubi</title>
 
   <style>
+    .galeria-slider{
+
+  width:100%;
+
+  overflow:hidden;
+
+  border-radius:25px;
+
+  margin-top:40px;
+
+  position:relative;
+
+}
+
+.galeria-track{
+
+  display:flex;
+
+  gap:20px;
+
+  width:max-content;
+
+  animation:rolar 25s linear infinite;
+
+}
+
+.galeria-track img{
+
+  width:350px;
+
+  height:250px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+
+  transition:.4s;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
+
+}
+
+.galeria-track img:hover{
+
+  transform:scale(1.05);
+
+}
+
+/* ANIMAÇÃO */
+
+@keyframes rolar{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+
+}
+
+/* CELULAR */
+
+@media(max-width:768px){
+
+  .galeria-track img{
+
+    width:250px;
+
+    height:180px;
+
+  }
+
+}
     .slider-container{
 
   width:100%;
@@ -646,9 +721,9 @@
     <h2 class="titulo">
       Projetos e Experiências
     </h2>
-    <div class="slider-container">
+  <div class="galeria-slider">
 
-  <div class="slider">
+  <div class="galeria-track">
 
     <img src="obra1.jpg">
     <img src="obra2.jpg">
