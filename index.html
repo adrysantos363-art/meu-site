@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>RetecTubi</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#020617;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* FUNDO PRINCIPAL */
+
+    header{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+
+      background:
+      linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.75)),
+      url("imagens/foto.jpg.jpeg");
+
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+    }
+
+    /* CONTEÚDO */
+
+    .hero{
+      max-width:900px;
+      animation:entrada 1.5s ease;
+    }
+
+    /* LOGO */
+
+    .hero img{
+
+      width:320px;
+      max-width:90%;
+
+      object-fit:contain;
+
+      border:none;
+      border-radius:0;
+
+      background:none;
+
+      margin-bottom:50px;
+
+      filter:none;
+
+      animation:flutuar 3s ease-in-out infinite;
+    }
+
+    /* TÍTULO */
+
+    .hero h1{
+      font-size:70px;
+      margin-bottom:20px;
+      font-weight:bold;
+      text-shadow:0 0 20px rgba(0,0,0,.5);
+    }
+
+    /* TEXTO */
+
+    .hero p{
+      font-size:28px;
+      color:#dbeafe;
+      line-height:1.7;
+      margin-bottom:40px;
+    }
+
+    /* BOTÃO */
+
+    .btn{
+      display:inline-block;
+      padding:18px 40px;
+
+      background:#2563eb;
+      color:white;
+
+      text-decoration:none;
+
+      border-radius:14px;
+
+      font-size:20px;
+      font-weight:bold;
+
+      transition:.3s;
+    }
+
+    .btn:hover{
+      transform:scale(1.05);
+      background:#3b82f6;
+      box-shadow:0 0 25px rgba(59,130,246,.7);
+    }
+
+    /* SEÇÕES */
+
+    section{
+      padding:100px 10%;
+    }
+
+    .titulo{
+      text-align:center;
+      font-size:50px;
+      color:#60a5fa;
+      margin-bottom:60px;
+    }
+
+    /* SOBRE */
+
+    .sobre{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:50px;
+      align-items:center;
+    }
+
+    .sobre img{
+      width:100%;
+      border-radius:25px;
+      box-shadow:0 10px 40px rgba(0,0,0,.5);
+    }
+
+    .sobre-texto{
+      font-size:20px;
+      line-height:1.9;
+      color:#dbeafe;
+    }
+
+    /* CARDS */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#0f172a;
+      border-radius:25px;
+      overflow:hidden;
+      transition:.4s;
+      cursor:pointer;
+      position:relative;
+      min-height:340px;
+      transform-style:preserve-3d;
+      box-shadow:0 10px 30px rgba(0,0,0,.4);
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .flip-card{
+      width:100%;
+      height:100%;
+      position:relative;
+      transform-style:preserve-3d;
+      transition:transform .8s;
+    }
+
+    .card.flipped .flip-card{
+      transform:rotateY(180deg);
+    }
+
+    .face{
+      position:absolute;
+      width:100%;
+      height:100%;
+      backface-visibility:hidden;
+      overflow:hidden;
+      border-radius:25px;
+    }
+
+    .front img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card-content h3{
+      font-size:24px;
+      margin-bottom:10px;
+      color:#93c5fd;
+    }
+
+    .card-content p{
+      color:#cbd5e1;
+    }
+
+    .back{
+      background:#2563eb;
+      transform:rotateY(180deg);
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      text-align:center;
+
+      padding:25px;
+
+      line-height:1.8;
+      font-size:18px;
+    }
+
+    /* RODAPÉ */
+
+    footer{
+      background:#010409;
+      text-align:center;
+      padding:60px 20px;
+      color:#94a3b8;
+    }
+
+    footer h2{
+      color:white;
+      margin-bottom:20px;
+    }
+
+    footer p{
+      margin:10px 0;
+      font-size:18px;
+    }
+
+    /* ANIMAÇÕES */
+
+    @keyframes entrada{
+
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    @keyframes flutuar{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-10px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    /* RESPONSIVO */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .hero img{
+        width:220px;
+      }
+
+      .titulo{
+        font-size:36px;
+      }
+
+      section{
+        padding:70px 20px;
+      }
+
+      .sobre{
+        grid-template-columns:1fr;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+      }
+
+      .btn{
+        width:100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- TOPO -->
+
+  <header>
+
+    <div class="hero">
+
+      <!-- LOGO -->
+      <img src="imagens/logo.jpg.jpeg.png" alt="Logo Empresa">
+
+      
+      <h1>RETECTUBI</h1>
+
+      <p>
+        Montagem, Manutenção, Consultoria,
+        Projetos e Inspeção END.
+      </p>
+
+      <a href="#projetos" class="btn">
+        Ver Experiências
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- SOBRE -->
+
+  <section>
+
+    <h2 class="titulo">
+      Sobre Nós
+    </h2>
+
+    <div class="sobre">
+
+      <img src="imagens/nos.jpg.jpeg" alt="Sobre">
+
+      <div class="sobre-texto">
+
+        Atuamos nas áreas de inspeção técnica, montagem industrial, manutenção e fiscalização operacional.
+
+      
+
+        <br><br>
+
+        Temos ampla experiência em projetos industriais,
+        inspeções END, auditorias técnicas,
+        controle de qualidade e supervisão em campo.
+
+        <br><br>
+
+        Nosso foco é garantir segurança,
+        conformidade e excelência operacional.
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJETOS -->
+
+  <section id="projetos">
+
+    <h2 class="titulo">
+      Projetos e Experiências
+    </h2>
+
+    <div class="cards">
+
+      <!-- CARD 1 -->
+
+      <div class="card" onclick="flipCard(this)">
+
+        <div class="flip-card">
+
+          <div class="face front">
+
+            <img src="imagens/foto1.jpg.jpeg" alt="Projeto 1">
+            
+
+            <div class="card-content">
+
+              <h3>Auditoria Industrial</h3>
+
+              <p>
+                Clique para ver detalhes
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="face back">
+
+            Realização de auditorias industriais,
+            inspeções técnicas e avaliação
+            de riscos operacionais.
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+
+      <div class="card" onclick="flipCard(this)">
+
+        <div class="flip-card">
+
+          <div class="face front">
+
+            <img src="imagens/sobre.jpg.jpeg" alt="Projeto 2">
+
+            <div class="card-content">
+
+              <h3>Inspeção em Campo
+                Controle de Qualidade
+              </h3>
+
+              <p>
+                Clique para ver detalhes
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="face back">
+
+            Supervisão operacional,
+            fiscalização técnica e acompanhamento
+            de atividades industriais.
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD 3 -->
+
+      <div class="card" onclick="flipCard(this)">
+
+        <div class="flip-card">
+
+          <div class="face front">
+
+            <img src="imagens/perfil.jpg.jpeg" alt="Projeto 3">
+
+            <div class="card-content">
+
+              <h3>Controle de Qualidade</h3>
+
+              <p>
+                Clique para ver detalhes
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="face back">
+
+            Desenvolvimento de relatórios técnicos,
+            inspeções END e melhoria contínua
+            dos processos industriais.
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+
+    <h2>Contato</h2>
+
+    <p>📞 (21) 99999-9999</p>
+
+    <p>✉️ contato@empresa.com</p>
+
+    <p>📍 Rio de Janeiro - RJ</p>
+
+  </footer>
+
+  <script>
+
+    function flipCard(card){
+      card.classList.toggle("flipped");
+    }
+
+  </script>
+
+</body>
+
+</html>
