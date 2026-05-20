@@ -9,6 +9,58 @@
   <title>RetecTubi</title>
 
   <style>
+    .nova-galeria{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap:25px;
+
+  margin-top:80px;
+
+}
+
+.nova-galeria img{
+
+  width:100%;
+
+  height:250px;
+
+  object-fit:cover;
+
+  border-radius:20px;
+
+  transition:.4s;
+
+  box-shadow:0 10px 25px rgba(0,0,0,.5);
+
+}
+
+.nova-galeria img:hover{
+
+  transform:scale(1.03);
+
+}
+
+/* CELULAR */
+
+@media(max-width:768px){
+
+  .nova-galeria{
+
+    grid-template-columns:1fr;
+
+  }
+
+  .nova-galeria img{
+
+    height:220px;
+
+  }
+
+}
     .galeria-slider{
 
   width:100%;
@@ -722,18 +774,19 @@
     <h2 class="titulo">
       Projetos e Experiências
     </h2>
-  <div class="galeria-slider">
+  <div class="nova-galeria">
 
-  <div class="galeria-track">
+  <img src="gale.jpg.jpeg">
 
-    <img src="imagens/logo.jpg.jpeg">
-    <img src="gale2.jpg.jpeg">
-    <img src="obra2.jpg.jpeg">
-    <img src="imagens/foto1.jpg.jpeg">
-    <img src="gale.jpg.jpeg">
-    <img src="ensaio-por-liquido-jpg.jpg">
+  <img src="gale2.jpg.jpeg">
 
-  </div>
+  <img src="gale3.jpg.jpeg">
+
+  <img src="foto1.jpg.jpeg">
+
+  <img src="particulamagnetica.jpg">
+
+  <img src="ensaio-por-liquido-jpg.jpg">
 
 </div>
 
