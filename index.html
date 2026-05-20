@@ -1,74 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head> 
+<head>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>RetecTubi</title>
+  <title>RETECTUBI</title>
 
   <style>
-.whatsapp-btn:hover{
-
-  transform:translateY(-5px) scale(1.05);
-
-  box-shadow:
-  0 0 30px rgba(37,211,102,.8),
-  0 0 60px rgba(37,211,102,.4);
-
-}
-
-.whatsapp-btn span{
-  font-size:28px;
-}
-
-@keyframes pulse{
-
-  0%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.03);
-  }
-
-  100%{
-    transform:scale(1);
-  }
-
-}
-    .whatsapp-btn{
-
-  display:inline-block;
-
-  padding:16px 35px;
-
-  background:#25d366;
-
-  color:white;
-
-  text-decoration:none;
-
-  border-radius:12px;
-
-  font-size:20px;
-
-  font-weight:bold;
-
-  transition:.3s;
-
-  box-shadow:0 0 20px rgba(37,211,102,.5);
-
-}
-
-.whatsapp-btn:hover{
-
-  transform:scale(1.05);
-
-  background:#1ebe5d;
-
-}
 
     *{
       margin:0;
@@ -87,14 +27,18 @@
       overflow-x:hidden;
     }
 
-    /* FUNDO PRINCIPAL */
+    /* TOPO */
 
     header{
+
       min-height:100vh;
+
       display:flex;
       justify-content:center;
       align-items:center;
+
       text-align:center;
+
       padding:20px;
 
       background:
@@ -104,12 +48,11 @@
       background-size:cover;
       background-position:center;
       background-repeat:no-repeat;
+
     }
 
-    /* CONTEÚDO */
-
     .hero{
-      max-width:900px;
+      max-width:1000px;
       animation:entrada 1.5s ease;
     }
 
@@ -117,48 +60,55 @@
 
     .hero img{
 
-      width:900px;
+      width:700px;
       max-width:90%;
 
       object-fit:contain;
 
-      border:none;
-      border-radius:0;
-
-      background:none;
-
-      margin-bottom:50px;
-
-      filter:none;
+      margin-bottom:40px;
 
       animation:flutuar 3s ease-in-out infinite;
+
     }
 
     /* TÍTULO */
 
     .hero h1{
+
       font-size:70px;
+
       margin-bottom:20px;
+
       font-weight:bold;
-      text-shadow:0 0 20px rgba(0,0,0,.5);
+
+      letter-spacing:3px;
+
     }
 
     /* TEXTO */
 
     .hero p{
-      font-size:28px;
+
+      font-size:26px;
+
       color:#dbeafe;
+
       line-height:1.7;
+
       margin-bottom:40px;
+
     }
 
     /* BOTÃO */
 
     .btn{
+
       display:inline-block;
+
       padding:18px 40px;
 
       background:#2563eb;
+
       color:white;
 
       text-decoration:none;
@@ -166,18 +116,21 @@
       border-radius:14px;
 
       font-size:20px;
+
       font-weight:bold;
 
-      transition:.3s;
+      transition:.4s;
+
     }
-    .whatsapp-btn{
-  margin-top:20px;
-}
 
     .btn:hover{
+
       transform:scale(1.05);
+
       background:#3b82f6;
+
       box-shadow:0 0 25px rgba(59,130,246,.7);
+
     }
 
     /* SEÇÕES */
@@ -187,83 +140,97 @@
     }
 
     .titulo{
+
       text-align:center;
+
       font-size:50px;
+
       color:#60a5fa;
+
       margin-bottom:60px;
+
     }
 
     /* SOBRE */
 
     .sobre{
+
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(320px,1fr));
+
       gap:50px;
+
       align-items:center;
+
     }
 
     .sobre img{
+
       width:100%;
+
       border-radius:25px;
+
       box-shadow:0 10px 40px rgba(0,0,0,.5);
+
     }
 
     .sobre-texto{
+
       font-size:20px;
+
       line-height:1.9;
+
       color:#dbeafe;
+
     }
 
     /* CARDS */
 
     .cards{
+
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:30px;
-      margin-bottom:80px;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(300px,1fr));
+
+      gap:35px;
+
+      margin-top:50px;
+
     }
 
     .card{
+
       background:#0f172a;
+
       border-radius:25px;
+
       overflow:hidden;
+
       transition:.4s;
+
       cursor:pointer;
-      position:relative;
-      min-height:340px;
-      transform-style:preserve-3d;
-      box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+      box-shadow:0 10px 30px rgba(0,0,0,.5);
+
     }
 
     .card:hover{
       transform:translateY(-10px);
     }
 
-    .flip-card{
-      width:100%;
-      height:100%;
-      position:relative;
-      transform-style:preserve-3d;
-      transition:transform .8s;
-    }
+    .card img{
 
-    .card.flipped .flip-card{
-      transform:rotateY(180deg);
-    }
-
-    .face{
-      position:absolute;
       width:100%;
-      height:100%;
-      backface-visibility:hidden;
-      overflow:hidden;
-      border-radius:25px;
-    }
 
-    .front img{
-      width:100%;
-      height:220px;
+      height:230px;
+
       object-fit:cover;
+
+      transition:.4s;
+
     }
 
     .card-content{
@@ -271,110 +238,154 @@
     }
 
     .card-content h3{
+
       font-size:24px;
-      margin-bottom:10px;
+
+      margin-bottom:15px;
+
       color:#93c5fd;
+
     }
 
     .card-content p{
+
       color:#cbd5e1;
+
+      line-height:1.7;
+
     }
 
-    .back{
-      background:#2563eb;
-      transform:rotateY(180deg);
+    /* GALERIA */
+
+    .galeria{
+
+      margin-top:80px;
+
+      overflow-x:auto;
+
+      padding-bottom:20px;
+
+    }
+
+    .galeria-track{
 
       display:flex;
-      justify-content:center;
-      align-items:center;
 
-      text-align:center;
+      gap:25px;
 
-      padding:25px;
+      width:max-content;
 
-      line-height:1.8;
-      font-size:18px;
+    }
+
+    .galeria-track img{
+
+      width:350px;
+
+      height:250px;
+
+      object-fit:cover;
+
+      border-radius:20px;
+
+      transition:.4s;
+
+      box-shadow:0 10px 25px rgba(0,0,0,.5);
+
+    }
+
+    .galeria-track img:hover{
+
+      transform:scale(1.05);
+
+    }
+
+    .galeria::-webkit-scrollbar{
+      height:10px;
+    }
+
+    .galeria::-webkit-scrollbar-thumb{
+
+      background:#2563eb;
+
+      border-radius:20px;
+
     }
 
     /* RODAPÉ */
 
     footer{
-      
+
       background:#010409;
+
       text-align:center;
-      padding:60px 20px;
+
+      padding:70px 20px;
+
       color:#94a3b8;
+
     }
-    
-    footer{
-  background:#010409;
-  text-align:center;
-  padding:60px 20px;
-  color:#94a3b8;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
-    footer{
-
-  background:#010409;
-
-  text-align:center;
-
-  padding:60px 20px;
-
-  color:#94a3b8;
-
-}
-
-.whatsapp-btn{
-
-  display:inline-flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  margin-top:30px;
-
-  padding:18px 38px;
-
-  background:linear-gradient(45deg,#25d366,#1ebe5d);
-
-  color:white;
-
-  text-decoration:none;
-
-  border-radius:50px;
-
-  font-size:20px;
-
-  font-weight:bold;
-
-  transition:.4s;
-
-  box-shadow:
-  0 0 20px rgba(37,211,102,.5);
-
-}
-
-.whatsapp-btn:hover{
-
-  transform:scale(1.05);
-
-}
-    
 
     footer h2{
+
       color:white;
+
       margin-bottom:20px;
+
+      font-size:40px;
+
     }
 
     footer p{
-      margin:10px 0;
-      font-size:18px;
+
+      margin:12px 0;
+
+      font-size:20px;
+
+    }
+
+    /* BOTÃO WHATSAPP */
+
+    .whatsapp-btn{
+
+      display:inline-flex;
+
+      align-items:center;
+
+      justify-content:center;
+
+      gap:12px;
+
+      margin-top:35px;
+
+      padding:18px 40px;
+
+      background:
+      linear-gradient(45deg,#25d366,#1ebe5d);
+
+      color:white;
+
+      text-decoration:none;
+
+      border-radius:50px;
+
+      font-size:22px;
+
+      font-weight:bold;
+
+      transition:.4s;
+
+      box-shadow:
+      0 0 25px rgba(37,211,102,.5);
+
+    }
+
+    .whatsapp-btn:hover{
+
+      transform:scale(1.05);
+
+      box-shadow:
+      0 0 35px rgba(37,211,102,.8);
+
     }
 
     /* ANIMAÇÕES */
@@ -396,7 +407,7 @@
     @keyframes flutuar{
 
       0%{
-        transform:translateY(0px);
+        transform:translateY(0);
       }
 
       50%{
@@ -404,7 +415,7 @@
       }
 
       100%{
-        transform:translateY(0px);
+        transform:translateY(0);
       }
 
     }
@@ -422,22 +433,22 @@
       }
 
       .hero img{
-        width:90%;
+        width:95%;
       }
 
       .titulo{
-        font-size:36px;
+        font-size:34px;
       }
 
       section{
         padding:70px 20px;
       }
 
-      .sobre{
+      .cards{
         grid-template-columns:1fr;
       }
 
-      .cards{
+      .sobre{
         grid-template-columns:1fr;
       }
 
@@ -445,8 +456,23 @@
         width:100%;
       }
 
+      .galeria-track img{
+
+        width:280px;
+
+        height:200px;
+
+      }
+
+      .whatsapp-btn{
+
+        width:100%;
+
+        font-size:18px;
+
+      }
+
     }
-    
 
   </style>
 
@@ -460,21 +486,23 @@
 
     <div class="hero">
 
-      <!-- LOGO -->
-      <img src="imagens/logo.jpg.jpeg.png" alt="Logo Empresa">
+      <img src="imagens/logo.jpg.jpeg.png" alt="Logo RETECTUBI">
 
-      
       <h1>RETECTUBI</h1>
 
       <p>
+
         Montagem, Manutenção, Consultoria,
         Projetos e Inspeção END.
+
       </p>
 
       <a href="#projetos" class="btn">
+
         Ver Experiências
+
       </a>
-      
+
     </div>
 
   </header>
@@ -484,29 +512,32 @@
   <section>
 
     <h2 class="titulo">
+
       Sobre Nós
+
     </h2>
 
     <div class="sobre">
 
-      <img src="imagens/nos.jpg.jpeg" alt="Sobre">
+      <img src="imagens/nos.jpg.jpeg" alt="Sobre a Empresa">
 
       <div class="sobre-texto">
 
-        Atuamos nas áreas de inspeção técnica, montagem industrial, manutenção e fiscalização operacional.
-
-      
+        Atuamos nas áreas de inspeção técnica,
+        montagem industrial, manutenção
+        e fiscalização operacional.
 
         <br><br>
 
-        Temos ampla experiência em projetos industriais,
+        Possuímos ampla experiência em projetos industriais,
         inspeções END, auditorias técnicas,
         controle de qualidade e supervisão em campo.
 
         <br><br>
 
         Nosso foco é garantir segurança,
-        conformidade e excelência operacional.
+        conformidade e excelência operacional
+        em todos os serviços realizados.
 
       </div>
 
@@ -519,65 +550,52 @@
   <section id="projetos">
 
     <h2 class="titulo">
+
       Projetos e Experiências
+
     </h2>
 
-
+    <div class="cards">
 
       <!-- CARD 1 -->
 
-      <div class="card" onclick="flipCard(this)">
+      <div class="card">
 
-        <div class="flip-card">
+        <img src="imagens/sobre.jpg.jpeg" alt="Auditoria Industrial">
 
-          <div class="face front">
+        <div class="card-content">
 
-            <img src="imagens/sobre.jpg.jpeg" alt="Projeto 1">
+          <h3>Auditoria Industrial</h3>
 
-            <div class="card-content">
-
-          <div class="face back">
+          <p>
 
             Realização de auditorias industriais,
             inspeções técnicas e avaliação
             de riscos operacionais.
 
-          </div>
+          </p>
 
         </div>
 
       </div>
+
       <!-- CARD 2 -->
 
-      <div class="card" onclick="flipCard(this)">
+      <div class="card">
 
-        <div class="flip-card">
+        <img src="imagens/perfil.jpg.jpeg" alt="Inspeção em Campo">
 
-          <div class="face front">
+        <div class="card-content">
 
-            <img src="imagens/sobre.jpg.jpeg" alt="Projeto 2">
+          <h3>Inspeção em Campo</h3>
 
-            <div class="card-content">
-
-              <h3>Inspeção em Campo
-                Controle de Qualidade
-              </h3>
-
-              <p>
-                Clique para ver detalhes
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="face back">
+          <p>
 
             Supervisão operacional,
             fiscalização técnica e acompanhamento
             de atividades industriais.
 
-          </div>
+          </p>
 
         </div>
 
@@ -585,35 +603,45 @@
 
       <!-- CARD 3 -->
 
-      <div class="card" onclick="flipCard(this)">
+      <div class="card">
 
-        <div class="flip-card">
+        <img src="imagens/foto1.jpg.jpeg" alt="Isolamento Térmico">
 
-          <div class="face front">
+        <div class="card-content">
 
-            <img src="imagens/perfil.jpg.jpeg" alt="Projeto 3">
+          <h3>Isolamento Térmico</h3>
 
-            <div class="card-content">
-
-              <h3>Isolamento Termico </h3>
-
-              <p>
-                Clique para ver detalhes
-              </p>
-
-            </div>
-
-          </div>
-
-          <div class="face back">
+          <p>
 
             Desenvolvimento de relatórios técnicos,
             inspeções END e melhoria contínua
             dos processos industriais.
 
-          </div>
+          </p>
 
         </div>
+
+      </div>
+
+    </div>
+
+    <!-- GALERIA -->
+
+    <div class="galeria">
+
+      <div class="galeria-track">
+
+        <img src="imagens/ensaio-por-liquido-jpg.jpg">
+
+        <img src="imagens/particulamagnetica.jpg">
+
+        <img src="imagens/sobre.jpg.jpeg">
+
+        <img src="imagens/perfil.jpg.jpeg">
+
+        <img src="imagens/foto1.jpg.jpeg">
+
+        <img src="imagens/nos.jpg.jpeg">
 
       </div>
 
@@ -623,33 +651,26 @@
 
   <!-- RODAPÉ -->
 
-    <footer>
+  <footer>
 
-  <h2>Contato</h2>
+    <h2>Contato</h2>
 
-  <p>📞 (21) 995542368</p>
+    <p>📞 (21) 99554-2368</p>
 
-  <p>✉️retectubimontagem@gmail.com</p>
+    <p>✉️ retectubimontagem@gmail.com</p>
 
-  <p>📍 Rio de Janeiro - RJ</p>
+    <p>📍 Rio de Janeiro - RJ</p>
 
-  <a 
-  href="https://wa.me/5521995542368?text=Olá,%20estou%20interessado%20no%20serviço"
-  class="whatsapp-btn"
-  target="_blank">
+    <a
+    href="https://wa.me/5521995542368?text=Olá,%20estou%20interessado%20no%20serviço"
+    class="whatsapp-btn"
+    target="_blank">
 
-  📲 Falar com a Empresa
+    📲 Falar com a Empresa
 
-  </a>
+    </a>
 
-</footer>
-  <script>
-
-    function flipCard(card){
-      card.classList.toggle("flipped");
-    }
-
-  </script>
+  </footer>
 
 </body>
 
