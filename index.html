@@ -520,34 +520,42 @@
     <h2 class="titulo">
       Projetos e Experiências
     </h2>
-  <h2 class="titulo">
-  Galeria de Serviços
-</h2>
 
 
-    <div class="cards">
 
       <!-- CARD 1 -->
-      <div class="card" onclick="flipCard(this)">
+    <div class="card" onclick="trocarFoto(this)">
 
-        <div class="flip-card">
+  <div class="flip-card">
 
-          <div class="face front">
+    <div class="face front">
 
-            <img src="imagens/foto1.jpg.jpeg" alt="Projeto 1">
-            
+      <img 
+      src="obra1.jpg"
+      class="imagem-card"
 
-            <div class="card-content">
+      data-fotos="
+      obra1.jpg,
+      obra2.jpg,
+      obra3.jpg,
+      foto1.jpg.jpeg
+      ">
 
-              <h3>Auditoria Industrial</h3>
+      <div class="card-content">
 
-              <p>
-                Clique para ver detalhes
-              </p>
+        <h3>Projetos Industriais</h3>
 
-            </div>
+        <p>
+          Clique para trocar as fotos
+        </p>
 
-          </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
 
           <div class="face back">
 
@@ -663,6 +671,29 @@
     }
 
   </script>
+  <script>
+
+function trocarFoto(card){
+
+  const img = card.querySelector(".imagem-card");
+
+  const fotos = img.dataset.fotos.split(",");
+
+  let atual = fotos.indexOf(
+    img.getAttribute("src")
+  );
+
+  atual++;
+
+  if(atual >= fotos.length){
+    atual = 0;
+  }
+
+  img.src = fotos[atual].trim();
+
+}
+
+</script>
 
 </body>
 
