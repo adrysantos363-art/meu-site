@@ -649,29 +649,6 @@
     }
 
   </script>
-  <script>
-
-function trocarFoto(card){
-
-  const img = card.querySelector(".imagem-card");
-
-  const fotos = img.dataset.fotos.split(",");
-
-  let atual = fotos.indexOf(
-    img.getAttribute("src")
-  );
-
-  atual++;
-
-  if(atual >= fotos.length){
-    atual = 0;
-  }
-
-  img.src = fotos[atual].trim();
-
-}
-
-</script>
 
 </body>
 
